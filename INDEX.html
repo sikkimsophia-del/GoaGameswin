@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>GG Goa Games Win</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #1e90ff;
+      --dark-blue: #0066cc;
+      --gold: #ffd700;
+      --green: #32cd32;
+      --orange: #ff4500;
+      --light-text: #fff;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: var(--light-text);
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    /* Container utama yang terpusat */
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+      background: transparent;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Age Verification Modal - DIBUAT TRANSPARAN */
+    #ageModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: rgba(15, 32, 39, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 0 40px rgba(30, 144, 255, 0.3);
+      border: 2px solid var(--primary-blue);
+      animation: pulse 2s infinite;
+      z-index: 10000;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(30, 144, 255, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(30, 144, 255, 0.6); }
+      100% { box-shadow: 0 0 20px rgba(30, 144, 255, 0.3); }
+    }
+
+    #ageModal h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: var(--gold);
+    }
+
+    #ageModal p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .age-btn {
+      padding: 14px 32px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 140px;
+    }
+
+    #confirmBtn {
+      background: linear-gradient(to right, var(--green), #2aa82a);
+      color: #000;
+    }
+
+    #confirmBtn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(50, 205, 50, 0.3);
+    }
+
+    #declineBtn {
+      background: linear-gradient(to right, #ff3333, #cc0000);
+      color: white;
+    }
+
+    #declineBtn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+    }
+
+    /* Header - DIBUAT TRANSPARAN */
+    header {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(30, 144, 255, 0.2);
+      backdrop-filter: blur(10px);
+      width: 100%;
+    }
+
+    /* LOGO GOAGAMES DARI GAMBAR */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 60px; /* Tinggi logo diperbesar */
+      width: auto;
+      max-width: 200px; /* Lebar maksimal */
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+      transition: all 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.4));
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary-blue);
+    }
+
+    /* TELEGRAM LINK DENGAN ICON FONT AWESOME */
+    .telegram-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0088cc;
+      padding: 10px 18px;
+      border-radius: 50px;
+      transition: all 0.3s;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .telegram-link:hover {
+      background: #006699;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+      color: white;
+    }
+
+    .telegram-link i {
+      font-size: 20px;
+      color: white;
+    }
+
+    /* CONTACT US MENGAMBANG DI POJOK KIRI BAWAH */
+    .floating-contact {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 1000;
+    }
+
+    .contact-button {
+      background: linear-gradient(45deg, #0088cc, #006699);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+      border: 2px solid var(--gold);
+      transition: all 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .contact-button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 136, 204, 0.6);
+      background: linear-gradient(45deg, #006699, #0088cc);
+    }
+
+    /* VIDEO SECTION - DIUBAH UKURANNYA */
+    .video-section {
+      width: 100%;
+      padding: 40px 20px;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .video-container {
+      max-width: 700px; /* Diperkecil dari 900px */
+      width: 100%;
+      text-align: center;
+    }
+
+    .video-container h2 {
+      font-size: 32px; /* Diperkecil dari 36px */
+      margin-bottom: 25px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 350px; /* Tinggi tetap untuk kontrol ukuran */
+      border-radius: 15px; /* Diperkecil dari 20px */
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Diperkecil dari 15px 40px */
+      border: 2px solid var(--gold); /* Diperkecil dari 3px */
+      background: #000;
+      margin: 0 auto;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Mengganti cover dengan contain agar video terlihat penuh */
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+
+    .video-wrapper:hover .video-overlay {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .play-button {
+      width: 70px; /* Diperkecil dari 80px */
+      height: 70px; /* Diperkecil dari 80px */
+      background: rgba(30, 144, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold); /* Diperkecil dari 3px */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Diperkecil */
+    }
+
+    .play-button:hover {
+      transform: scale(1.1);
+      background: rgba(30, 144, 255, 1);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .play-button i {
+      font-size: 30px; /* Diperkecil dari 36px */
+      color: white;
+      margin-left: 5px;
+    }
+
+    .video-title {
+      margin-top: 15px;
+      font-size: 22px; /* Diperkecil dari 24px */
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    /* Hero Section - OVERLAY DIHAPUS */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at center, rgba(30, 144, 255, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+      background-size: auto, auto;
+      overflow: hidden;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      background: transparent;
+      padding: 40px 30px;
+      border-radius: 20px;
+      max-width: 1200px;
+      width: 100%;
+      animation: fadeInUp 1s ease-out;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero Main Content dengan gambar di samping */
+    .hero-main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bonus-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 3px solid var(--gold);
+      animation: float-image 3s ease-in-out infinite;
+      transition: all 0.3s ease;
+    }
+
+    @keyframes float-image {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(2deg); }
+    }
+
+    .bonus-image:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 3vw, 20px);
+      margin-bottom: 30px;
+      color: #eee;
+      max-width: 800px;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    /* BONUS BANNER DI TENGAH - DIHAPUS DARI SINI */
+
+    /* Bonus Highlight */
+    .bonus-highlight {
+      background: linear-gradient(45deg, var(--gold), #ffd900);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 900;
+      text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Bonus Notification - DIUBAH MENJADI LINK */
+    .bonus-notification {
+      background: linear-gradient(45deg, var(--green), #2aa82a);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+      animation: pulse-green 2s infinite;
+      border: 2px solid var(--gold);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    .bonus-notification:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(50, 205, 50, 0.5);
+      background: linear-gradient(45deg, #2aa82a, var(--green));
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    /* BONUS BANNER DI BAWAH TOMBOL LOGIN & REGISTER - BARU */
+    .bonus-after-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .bonus-container {
+      background: linear-gradient(45deg, var(--primary-blue), var(--dark-blue));
+      padding: 25px 40px;
+      border-radius: 15px;
+      font-weight: bold;
+      color: white;
+      animation: bounce 2s infinite;
+      box-shadow: 0 5px 25px rgba(30, 144, 255, 0.6);
+      border: 3px solid var(--gold);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bonus-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    .bonus-container:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(30, 144, 255, 0.8);
+      background: linear-gradient(45deg, var(--dark-blue), var(--primary-blue));
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Bonus text */
+    .bonus-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bonus-text span:first-child {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .bonus-text span:last-child {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      margin-top: 5px;
+    }
+
+    /* STATISTICS BAR - BERJALAN HORIZONTAL */
+    .stats-bar {
+      width: 100%;
+      padding: 30px 20px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-top: 2px solid rgba(30, 144, 255, 0.3);
+      border-bottom: 2px solid rgba(30, 144, 0, 0.3);
+      margin: 40px 0;
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      border: 2px solid rgba(30, 144, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+    }
+
+    .stat-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .success-rate .stat-number {
+      background: linear-gradient(to right, #32cd32, #98fb98);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .market-coverage .stat-number {
+      background: linear-gradient(to right, #ff4500, #ffa500);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .players-count .stat-number {
+      background: linear-gradient(to right, #9b30ff, #ba55d3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stat-label {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .stat-description {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    /* Game Showcase Section - DIBUAT TRANSPARAN DAN TERPUSAT */
+    .game-showcase {
+      padding: 60px 20px;
+      text-align: center;
+      background: transparent;
+      width: 100%;
+    }
+
+    .game-showcase h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Container tanpa gambar */
+    .game-content-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      border: 2px solid rgba(30, 144, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .game-content-container:hover {
+      border-color: var(--gold);
+      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+      transform: translateY(-5px);
+    }
+
+    /* Teks besar untuk showcase */
+    .showcase-text {
+      font-size: 28px;
+      color: #fff;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .highlight-text {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Telegram button container */
+    .telegram-button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    /* Limited spots text */
+    .limited-spots {
+      background: linear-gradient(45deg, #ff4500, #ff8c00);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      max-width: 500px;
+      margin: 15px auto 0;
+      animation: pulse-red 2s infinite;
+      border: 2px solid var(--gold);
+    }
+
+    @keyframes pulse-red {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.02); opacity: 0.9; }
+    }
+
+    /* Tombol Login & Register - DIUBAH MENJADI BIRU */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    @media(min-width: 600px) {
+      .btn-group {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .btn-primary {
+      padding: 16px 32px;
+      font-weight: bold;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 250px;
+    }
+
+    /* TOMBOL LOGIN DIUBAH MENJADI BIRU */
+    .btn-login {
+      background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
+    }
+
+    .btn-login:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5);
+      background: linear-gradient(to right, var(--dark-blue), var(--primary-blue));
+    }
+
+    /* TOMBOL REGISTER DIUBAH MENJADI BIRU */
+    .btn-register {
+      background: linear-gradient(to right, var(--primary-blue), #0066ff);
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+    }
+
+    .btn-register:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 102, 255, 0.5);
+      background: linear-gradient(to right, #0066ff, var(--primary-blue));
+    }
+
+    /* TOMBOL TELEGRAM BESAR */
+    .telegram-btn-large {
+      padding: 20px 40px;
+      font-size: 22px;
+      font-weight: bold;
+      min-width: 300px;
+      background: linear-gradient(to right, #0088cc, #006699);
+      color: white;
+      border: 2px solid var(--gold);
+    }
+
+    .telegram-btn-large:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 136, 204, 0.5);
+      background: linear-gradient(to right, #006699, #0088cc);
+    }
+
+    /* Features Section - DIBUAT TRANSPARAN DAN TERPUSAT */
+    .features {
+      padding: 80px 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media(min-width: 768px) {
+      .features {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+
+    .feature-box {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(30, 144, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      backdrop-filter: blur(10px);
+    }
+
+    .feature-box:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary-blue);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+
+    .feature-box h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: var(--gold);
+    }
+
+    .feature-box p {
+      color: #ccc;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Footer - DIBUAT TRANSPARAN */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      color: #aaa;
+      border-top: 1px solid rgba(30, 144, 255, 0.2);
+      font-size: 14px;
+      width: 100%;
+      backdrop-filter: blur(10px);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-blue);
+    }
+
+    .copyright {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    /* Responsive Adjustments untuk Video */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .logo-container {
+        justify-content: center;
+      }
+      
+      .logo-img {
+        height: 50px; /* Diperkecil untuk tablet */
+      }
+      
+      .hero-content {
+        padding: 30px 20px;
+      }
+      
+      .hero-main {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .hero-text {
+        text-align: center;
+      }
+      
+      /* Responsive video untuk tablet */
+      .video-container {
+        max-width: 90%;
+      }
+      
+      .video-container h2 {
+        font-size: 28px;
+      }
+      
+      .video-wrapper {
+        height: 300px; /* Diperkecil untuk tablet */
+      }
+      
+      .play-button {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .play-button i {
+        font-size: 24px;
+      }
+      
+      .video-title {
+        font-size: 20px;
+      }
+      
+      .feature-box {
+        padding: 25px 20px;
+      }
+      
+      .modal-content {
+        padding: 30px 20px;
+      }
+      
+      .game-showcase h2 {
+        font-size: 28px;
+      }
+      
+      .stats-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .stat-item {
+        width: 100%;
+        max-width: 350px;
+      }
+      
+      .bonus-container {
+        padding: 20px 30px;
+      }
+      
+      .bonus-text span:first-child {
+        font-size: 18px;
+      }
+      
+      .bonus-text span:last-child {
+        font-size: 36px;
+      }
+      
+      .stat-number {
+        font-size: 40px;
+      }
+      
+      .showcase-text {
+        font-size: 22px;
+      }
+      
+      .highlight-text {
+        font-size: 24px;
+      }
+      
+      .game-content-container {
+        padding: 30px 20px;
+      }
+      
+      .telegram-btn-large {
+        min-width: 250px;
+        padding: 18px 30px;
+        font-size: 20px;
+      }
+      
+      .limited-spots {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      
+      /* Floating contact untuk mobile */
+      .floating-contact {
+        left: 15px;
+        bottom: 15px;
+      }
+      
+      .contact-button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .telegram-link {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+      
+      .telegram-link i {
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-container {
+        text-align: center;
+      }
+      
+      .logo-img {
+        height: 45px; /* Diperkecil untuk mobile */
+      }
+      
+      .hero h1 {
+        font-size: 24px;
+      }
+      
+      /* Responsive video untuk mobile */
+      .video-container {
+        max-width: 95%;
+      }
+      
+      .video-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .video-wrapper {
+        height: 250px; /* Diperkecil untuk mobile */
+        border-radius: 12px;
+      }
+      
+      .play-button {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .play-button i {
+        font-size: 20px;
+      }
+      
+      .video-title {
+        font-size: 18px;
+        margin-top: 10px;
+      }
+      
+      .bonus-container {
+        padding: 15px 20px;
+      }
+      
+      .bonus-text span:first-child {
+        font-size: 16px;
+      }
+      
+      .bonus-text span:last-child {
+        font-size: 30px;
+      }
+      
+      .btn-primary {
+        min-width: 200px;
+        padding: 14px 20px;
+      }
+      
+      .stat-number {
+        font-size: 36px;
+      }
+      
+      .telegram-link {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+      
+      .telegram-link i {
+        font-size: 16px;
+      }
+      
+      .bonus-image {
+        max-width: 90%;
+      }
+    }
+    
+    /* Untuk layar yang sangat kecil */
+    @media (max-width: 360px) {
+      .video-wrapper {
+        height: 200px;
+      }
+      
+      .video-container h2 {
+        font-size: 22px;
+      }
+      
+      .logo-img {
+        height: 40px; /* Diperkecil untuk layar sangat kecil */
+      }
+    }
+
+    /* Banner Link */
+    .banner-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    /* Clickable notification */
+    .clickable-notification {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Age Verification Modal -->
+  <div id="ageModal">
+    <div class="modal-content">
+      <h2><i class="fas fa-exclamation-triangle"></i> Age Restriction</h2>
+      <p>This website contains content related to online gaming and is intended for individuals aged 18 and above. By entering, you confirm that you meet the age requirement and agree to our Terms of Service.</p>
+      <div class="modal-buttons">
+        <button class="age-btn" id="confirmBtn">I am 18+</button>
+        <button class="age-btn" id="declineBtn">I am under 18</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container dengan konten terpusat -->
+  <div class="main-container" id="mainContent" style="display: none;">
+    
+    <header>
+      <!-- LOGO GOAGAMES DARI GAMBAR - TANPA TULISAN -->
+      <div class="logo-container">
+        <img src="GoaGames Logo.png" alt="GoaGames Logo" class="logo-img">
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#video">Video</a>
+        <!-- TELEGRAM LINK DENGAN ICON FONT AWESOME -->
+        <a href="https://t.me/GOAGAMESWINNNN" target="_blank" class="telegram-link">
+          <i class="fab fa-telegram"></i>
+          <span>Join Telegram</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- CONTACT US MENGAMBANG DI POJOK KIRI BAWAH -->
+    <div class="floating-contact">
+      <a href="https://t.me/reym042" target="_blank" class="contact-button">
+        <i class="fab fa-telegram"></i> Contact
+      </a>
+    </div>
+
+    <section class="hero">
+      <!-- Hero Content TANPA BACKGROUND OVERLAY -->
+      <div class="hero-content">
+        <!-- Hero Main dengan teks dan gambar di samping -->
+        <div class="hero-main">
+          <div class="hero-text">
+            <h1>Join Our Telegram & Get Free Gift Codes</h1>
+            <p>Get <span class="bonus-highlight">Free Recharge Bonus up to 8%</span></p>
+            
+            <!-- Bonus Notification - DIUBAH MENJADI LINK -->
+            <a href="https://goaokc.com/#/register" target="_blank" class="bonus-notification banner-link clickable-notification">
+              <i class="fas fa-star"></i> SPECIAL OFFER: New members get 8% bonus on first deposit! <i class="fas fa-arrow-right"></i>
+            </a>
+            
+            <div class="btn-group">
+              <!-- TOMBOL LOGIN DIUBAH MENJADI BIRU -->
+              <a href="https://goaokc.com/#/login" target="_blank">
+                <button class="btn-primary btn-login">
+                  <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+              </a>
+              <!-- TOMBOL REGISTER DIUBAH MENJADI BIRU -->
+              <a href="https://goaokc.com/#/register" target="_blank">
+                <button class="btn-primary btn-register">
+                  <i class="fas fa-user-plus"></i> Register Now
+                </button>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Gambar Bonus di samping -->
+          <div class="hero-image">
+            <img src="bonus up to 8%.png" alt="BONUS UP TO 8%" class="bonus-image">
+          </div>
+        </div>
+
+        <!-- BONUS BANNER DI BAWAH TOMBOL LOGIN & REGISTER - BARU -->
+        <div class="bonus-after-buttons">
+          <a href="https://goaokc.com/#/register" target="_blank" class="bonus-container banner-link">
+            <i class="fas fa-gift fa-2x"></i>
+            <div class="bonus-text">
+              <span>BONUS UP TO</span>
+              <span>8%</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION - UKURAN DIKECILKAN -->
+    <section id="video" class="video-section">
+      <div class="video-container">
+        <h2>Watch Our Promotional Video</h2>
+        <div class="video-wrapper">
+          <video id="goagamesVideo" preload="metadata" controls>
+            <!-- Multiple video formats for browser compatibility -->
+            <source src="GoaGamesIklan.mp4" type="video/mp4">
+            <source src="GoaGamesIklan.webm" type="video/webm">
+            <source src="GoaGamesIklan.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay">
+            <div class="play-button" id="playButton">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-title">GOA GAMES PROMOTIONAL VIDEO</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATISTICS BAR - BERJALAN HORIZONTAL -->
+    <section class="stats-bar">
+      <div class="stats-container">
+        <div class="stat-item success-rate">
+          <div class="stat-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="stat-number">92%</div>
+          <div class="stat-label">Success Rate</div>
+          <p class="stat-description">
+            Impressive 92% success rate in game payouts
+          </p>
+        </div>
+        
+        <div class="stat-item market-coverage">
+          <div class="stat-icon">
+            <i class="fas fa-globe-asia"></i>
+          </div>
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Market Coverage</div>
+          <p class="stat-description">
+            Round-the-clock services worldwide
+          </p>
+        </div>
+        
+        <div class="stat-item players-count">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-number">10,000+</div>
+          <div class="stat-label">Players Worldwide</div>
+          <p class="stat-description">
+            Join our growing community
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Game Showcase Section -->
+    <section id="showcase" class="game-showcase">
+      <h2>Exclusive Telegram Bonuses</h2>
+      <div class="game-content-container">
+        <p class="showcase-text">
+          <span class="highlight-text">Get Free Recharge Bonus up to 8%</span>
+        </p>
+        <p class="showcase-text">
+          Join our exclusive Telegram channel for daily free gift codes, special promotions, and member-only bonuses!
+        </p>
+      </div>
+      
+      <!-- HANYA TOMBOL TELEGRAM BONUS -->
+      <div class="telegram-button-container">
+        <a href="https://t.me/GOAGAMESWINNNN" target="_blank">
+          <button class="btn-primary telegram-btn-large">
+            <i class="fab fa-telegram"></i> Get Telegram Bonus
+          </button>
+        </a>
+        
+        <!-- TEXT LIMITED SPOTS -->
+        <div class="limited-spots">
+          <i class="fas fa-exclamation-circle"></i> Limited spots available - Join now before registration closes!
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="feature-box">
+        <div class="feature-icon">
+          <i class="fas fa-gamepad"></i>
+        </div>
+        <h3>Exciting Slot Games</h3>
+        <p>Enjoy top-quality slot machines with immersive graphics, engaging themes, and thrilling gameplay mechanics designed for maximum entertainment.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">
+          <i class="fas fa-coins"></i>
+        </div>
+        <h3>Big Wins & Bonuses</h3>
+        <p>Claim free spins, progressive jackpots, daily rewards, and special <span class="bonus-highlight">bonuses up to 8%</span> that increase your chances of hitting it big.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Secure & Trusted</h3>
+        <p>Join over 10,000+ players enjoying a safe, fair, and reliable gaming experience with encrypted transactions and certified RNG systems.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Support</a>
+        <a href="#">Responsible Gaming</a>
+      </div>
+      <div class="copyright">
+        © 2025 GoaGames. All Rights Reserved. | For entertainment purposes only.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Age verification functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const ageModal = document.getElementById('ageModal');
+      const mainContent = document.getElementById('mainContent');
+      const confirmBtn = document.getElementById('confirmBtn');
+      const declineBtn = document.getElementById('declineBtn');
+      
+      // Check if user has already verified age (using sessionStorage)
+      const ageVerified = sessionStorage.getItem('ageVerified');
+      
+      if (ageVerified === 'true') {
+        ageModal.style.display = 'none';
+        mainContent.style.display = 'flex';
+      }
+      
+      // Handle age confirmation
+      confirmBtn.addEventListener('click', function() {
+        ageModal.style.display = 'none';
+        mainContent.style.display = 'flex';
+        sessionStorage.setItem('ageVerified', 'true');
+        
+        // Add welcome message
+        const welcomeMsg = document.createElement('div');
+        welcomeMsg.innerHTML = `
+          <div style="position:fixed; top:20px; right:20px; background:#32cd32; color:#000; padding:10px 20px; border-radius:10px; z-index:1000; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.3); animation:slideIn 0.5s ease-out;">
+            <i class="fas fa-check-circle"></i> Age verified! Welcome to GoaGames.
+          </div>
+        `;
+        document.body.appendChild(welcomeMsg);
+        
+        // Remove welcome message after 5 seconds
+        setTimeout(() => {
+          welcomeMsg.remove();
+        }, 5000);
+      });
+      
+      // Handle age decline
+      declineBtn.addEventListener('click', function() {
+        ageModal.innerHTML = `
+          <div class="modal-content">
+            <h2><i class="fas fa-door-closed"></i> Access Restricted</h2>
+            <p>This content is only available to users aged 18 and above. Please return when you meet the age requirement.</p>
+            <p>You will be redirected shortly...</p>
+          </div>
+        `;
+        
+        // Redirect after 3 seconds
+        setTimeout(() => {
+          window.location.href = 'https://www.google.com';
+        }, 3000);
+      });
+      
+      // VIDEO PLAYER FUNCTIONALITY - DIUBAH
+      const video = document.getElementById('goagamesVideo');
+      const playButton = document.getElementById('playButton');
+      const videoOverlay = document.querySelector('.video-overlay');
+      
+      if (video && playButton) {
+        // Auto-hide controls after 3 seconds of inactivity
+        let controlsTimeout;
+        
+        function hideControls() {
+          videoOverlay.style.opacity = '0';
+          if (!video.paused) {
+            video.controls = false;
+          }
+        }
+        
+        function showControls() {
+          videoOverlay.style.opacity = '1';
+          video.controls = true;
+          clearTimeout(controlsTimeout);
+          controlsTimeout = setTimeout(hideControls, 3000);
+        }
+        
+        // Initialize
+        video.controls = true;
+        
+        // Play/pause functionality
+        playButton.addEventListener('click', function() {
+          if (video.paused) {
+            video.play();
+            hideControls();
+          } else {
+            video.pause();
+            showControls();
+          }
+        });
+        
+        // Click on video to play/pause
+        video.addEventListener('click', function() {
+          if (video.paused) {
+            video.play();
+            hideControls();
+          } else {
+            video.pause();
+            showControls();
+          }
+        });
+        
+        // Mouse movement shows controls
+        video.addEventListener('mousemove', showControls);
+        videoOverlay.addEventListener('mousemove', showControls);
+        
+        // Update play button when video ends
+        video.addEventListener('ended', function() {
+          showControls();
+          playButton.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        // Show overlay when video is paused
+        video.addEventListener('pause', function() {
+          showControls();
+          playButton.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        // Hide overlay when video is playing
+        video.addEventListener('play', function() {
+          playButton.innerHTML = '<i class="fas fa-pause"></i>';
+        });
+      }
+      
+      // Handle video error
+      if (video) {
+        video.onerror = function() {
+          // If video fails to load, show placeholder message
+          const videoWrapper = document.querySelector('.video-wrapper');
+          if (videoWrapper) {
+            videoWrapper.innerHTML = `
+              <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; background:linear-gradient(45deg, #1e90ff, #0066cc); color:white; padding:20px; text-align:center; border-radius:15px;">
+                <i class="fas fa-video-slash" style="font-size:50px; margin-bottom:20px; color:#ffd700;"></i>
+                <h3 style="font-size:22px; margin-bottom:10px;">Video Not Available</h3>
+                <p style="font-size:14px; max-width:400px;">The promotional video is currently unavailable. Please check back later or join our Telegram channel for updates.</p>
+                <a href="https://t.me/GOAGAMESWINNNN" target="_blank" style="margin-top:20px; background:#0088cc; color:white; padding:10px 20px; border-radius:50px; text-decoration:none; font-weight:bold; display:flex; align-items:center; gap:10px; font-size:14px;">
+                  <i class="fab fa-telegram"></i> Join Telegram
+                </a>
+              </div>
+            `;
+          }
+        };
+      }
+      
+      // Add animation to feature boxes on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+      
+      // Observe feature boxes
+      document.querySelectorAll('.feature-box').forEach(box => {
+        box.style.opacity = '0';
+        box.style.transform = 'translateY(20px)';
+        box.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(box);
+      });
+      
+      // Observe game showcase container
+      const gameContainer = document.querySelector('.game-content-container');
+      if (gameContainer) {
+        gameContainer.style.opacity = '0';
+        gameContainer.style.transform = 'translateY(20px)';
+        gameContainer.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        observer.observe(gameContainer);
+      }
+      
+      // Observe video container
+      const videoContainer = document.querySelector('.video-container');
+      if (videoContainer) {
+        videoContainer.style.opacity = '0';
+        videoContainer.style.transform = 'translateY(20px)';
+        videoContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(videoContainer);
+        
+        // Trigger animation for video container
+        setTimeout(() => {
+          videoContainer.style.opacity = '1';
+          videoContainer.style.transform = 'translateY(0)';
+        }, 300);
+      }
+      
+      // Observe statistics items
+      document.querySelectorAll('.stat-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
+      });
+      
+      // Observe bonus container
+      const bonusContainer = document.querySelector('.bonus-container');
+      if (bonusContainer) {
+        bonusContainer.style.opacity = '0';
+        bonusContainer.style.transform = 'translateY(20px)';
+        bonusContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(bonusContainer);
+        
+        // Trigger animation after a short delay
+        setTimeout(() => {
+          bonusContainer.style.opacity = '1';
+          bonusContainer.style.transform = 'translateY(0)';
+        }, 500);
+      }
+      
+      // Observe bonus image
+      const bonusImage = document.querySelector('.bonus-image');
+      if (bonusImage) {
+        bonusImage.style.opacity = '0';
+        bonusImage.style.transform = 'translateY(20px) scale(0.9)';
+        bonusImage.style.transition = 'opacity 1s ease, transform 1s ease';
+        
+        // Trigger animation for bonus image
+        setTimeout(() => {
+          bonusImage.style.opacity = '1';
+          bonusImage.style.transform = 'translateY(0) scale(1)';
+        }, 300);
+      }
+      
+      // ANIMASI COUNTER YANG DIPERBAIKI
+      function animateCounter(element, target, duration, isNumber = true) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= target) {
+            if (isNumber) {
+              element.textContent = '10,000+';
+            } else {
+              element.textContent = target + '%';
+            }
+            clearInterval(timer);
+          } else {
+            if (isNumber) {
+              element.textContent = Math.floor(start).toLocaleString() + '+';
+            } else {
+              element.textContent = Math.floor(start) + '%';
+            }
+          }
+        }, 16);
+      }
+      
+      // Animate statistics when stats bar comes into view
+      const statsBar = document.querySelector('.stats-bar');
+      let animated = false;
+      
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            
+            // Animate success rate
+            const successRate = document.querySelector('.success-rate .stat-number');
+            if (successRate) {
+              successRate.textContent = '0%';
+              setTimeout(() => {
+                animateCounter(successRate, 92, 1500, false);
+              }, 300);
+            }
+            
+            // Animate players count
+            const playersCount = document.querySelector('.players-count .stat-number');
+            if (playersCount) {
+              playersCount.textContent = '0+';
+              setTimeout(() => {
+                animateCounter(playersCount, 10000, 2000, true);
+              }, 800);
+            }
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      if (statsBar) {
+        statsObserver.observe(statsBar);
+      }
+      
+      // Handle bonus image error
+      const bonusImg = document.querySelector('.bonus-image');
+      if (bonusImg) {
+        bonusImg.onerror = function() {
+          // Jika gambar tidak ditemukan, ubah menjadi placeholder sederhana
+          this.style.display = 'none';
+          // Tambahkan placeholder teks
+          const placeholder = document.createElement('div');
+          placeholder.innerHTML = `
+            <div style="background: linear-gradient(45deg, #1e90ff, #0066cc); padding: 30px; border-radius: 15px; border: 2px solid #ffd700; text-align: center; color: white; width: 100%;">
+              <div style="font-size: 28px; font-weight: bold; margin-bottom: 8px;">BONUS</div>
+              <div style="font-size: 22px; margin-bottom: 15px;">UP TO</div>
+              <div style="font-size: 60px; font-weight: bold; color: #ffd700; margin-bottom: 8px;">8%</div>
+              <div style="font-size: 20px;">%</div>
+            </div>
+          `;
+          this.parentNode.appendChild(placeholder);
+        };
+      }
+    });
+    
+    // Add CSS for slideIn animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
